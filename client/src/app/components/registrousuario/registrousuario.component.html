@@ -1,0 +1,89 @@
+<div style="text-align: center; vertical-align: middle;">
+    <div class="contains">
+        <mat-card fxFlex="40">
+            <mat-card-header style="justify-content: center;">
+                <mat-card-title>
+                    Registrar Usuario
+                </mat-card-title>
+            </mat-card-header>
+            <br>
+            <mat-card-content>
+                <form class="example-form">
+                    <p>
+                        <mat-form-field class="example-full-width" >
+                            <mat-label>Dni</mat-label>
+                            <input matInput [(ngModel)]="users.dni" name="dni">
+                        </mat-form-field>
+                    </p>
+                    <table class="example-full-width" cellspacing="0">
+                        <tr>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Nombre</mat-label>
+                                    <input matInput [(ngModel)]="users.nombre" name="nombre">
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Apellido</mat-label>
+                                    <input matInput [(ngModel)]="users.apellido" name="apellido">
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="example-full-width" cellspacing="0">
+                        <tr>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Departamento</mat-label>
+                                    <input matInput placeholder="Ex. Lima,Loreto,etc" [(ngModel)]="users.departamento" name="departamento">
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Provincia</mat-label>
+                                    <input matInput placeholder="Ex. Lima,Ica,etc" [(ngModel)]="users.provincia" name="provincia">
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                    </table>
+                    <p>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Distrito</mat-label>
+                            <input matInput placeholder="Ex. VMT,VS,Chorrillos" [(ngModel)]="users.distrito" name="distrito">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Dirección</mat-label>
+                            <input matInput placeholder="Av.,Jr.,Lote" [(ngModel)]="users.direccion" required name="direccion">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Phone number</mat-label>
+                            <input matInput placeholder="992 955 138" [(ngModel)]="users.telefono" required name="telefono">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Enter your email</mat-label>
+                            <input matInput placeholder="pat@example.com" [(ngModel)]="users.correo" required name="correo"> 
+                        </mat-form-field>
+                    </p>
+                    <table class="example-full-width" cellspacing="0">
+                        <tr>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Usuario</mat-label>
+                                    <input matInput placeholder="Ex.RYGN06,Hinga,etc." [(ngModel)]="users.usuario" name="usuario">
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Contraseña</mat-label>
+                                    <input matInput placeholder="Ex.12345,victor1456" [(ngModel)]="users.pass" name="pass">
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                    </table>
+                    <button class="button" mat-raised-button color="primary" (click)='guardarNewUsuario()'>Registrar</button>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

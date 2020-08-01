@@ -1,0 +1,17 @@
+<div class="contains" fxFlex="40" fxLayout="row" *ngFor="let product of products">
+    <mat-card fxFlex="40" fxLayout="column">
+        <img src="{{product.image}}" style="width: 30%;">
+        <mat-card-title style="text-align: left;">
+            {{product.title}}
+        </mat-card-title>
+        <mat-card-subtitle style="text-align: left;">
+                Descripción: {{product.description}}
+        </mat-card-subtitle>
+        <mat-card-content style="text-align: left;color: #0167FF">
+                S/. {{product.price}}
+        </mat-card-content>
+        <mat-card-content>
+            <button class="button" mat-raised-button color="primary">Agregar</button>
+        </mat-card-content>
+    </mat-card>
+</div>
