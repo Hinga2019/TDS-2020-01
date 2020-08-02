@@ -16,14 +16,14 @@ const database_1 = __importDefault(require("../database"));
 class ProductsController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const products = yield database_1.default.query('SELECT * FROM products');
+            const products = yield database_1.default.query('SELECT * FROM producto');
             res.json(products);
         });
     }
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const products = yield database_1.default.query('SELECT * FROM products WHERE id = ?', [id]);
+            const products = yield database_1.default.query('SELECT * FROM producto WHERE id = ?', [id]);
             if (products.length > 0) {
                 return res.json(products[0]);
             }
@@ -32,21 +32,21 @@ class ProductsController {
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO products set ?', [req.body]);
+            yield database_1.default.query('INSERT INTO producto set ?', [req.body]);
             res.json({ message: 'Producto Registrado' });
         });
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const products = yield database_1.default.query('UPDATE products set ? WHERE id = ?', [req.body, id]);
+            const products = yield database_1.default.query('UPDATE producto set ? WHERE id = ?', [req.body, id]);
             res.json({ message: 'Producto Actualizado' });
         });
     }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const products = yield database_1.default.query('DELETE FROM products WHERE id = ?', [id]);
+            const products = yield database_1.default.query('DELETE FROM producto WHERE id = ?', [id]);
             res.json({ message: 'Producto Eliminado' });
         });
     }

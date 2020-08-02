@@ -9,6 +9,7 @@ export interface Users{
     direccion:string;
     telefono:string;
     correo:string;
+    perfil:string;
     usuario:string;
     pass:string;
 }

@@ -20,6 +20,7 @@ export class RegistrousuarioComponent implements OnInit {
     direccion:'',
     telefono:'',
     correo:'',
+    perfil:'cliente',
     usuario:'',
     pass:''
   };
