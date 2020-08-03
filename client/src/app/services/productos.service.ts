@@ -17,19 +17,23 @@ export class ProductosService {
     return this.http.get(`${this.API_URI}/products`);
   }
 
-  getProduct(id: string){
-    return this.http.get(`${this.API_URI}/products/${id}`);
+  getProduct(idproducto: string){
+    return this.http.get(`${this.API_URI}/products/${idproducto}`);
   }
 
-  deleteProduct(id: string){
-    return this.http.delete(`${this.API_URI}/products/${id}`);
+  getProductCat(idcategoria:string){
+    return this.http.get(`${this.API_URI}/products/categoria/${idcategoria}`);
+  }
+
+  deleteProduct(idproducto: string){
+    return this.http.delete(`${this.API_URI}/products/${idproducto}`);
   }
 
   saveProduct(products: Products){
     return this.http.post(`${this.API_URI}/products`,products);
   }
 
-  updateProduct(id: string,updatedProduct: Products) {
-    return this.http.put(`${this.API_URI}/products/${id}`,updatedProduct);
+  updateProduct(idproducto: string,updatedProduct: Products) {
+    return this.http.put(`${this.API_URI}/products/${idproducto}`,updatedProduct);
   }
 }

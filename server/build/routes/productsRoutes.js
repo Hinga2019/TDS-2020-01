@@ -12,10 +12,11 @@ class ProductsRoutes {
     }
     config() {
         this.router.get('/', productsController_1.default.list);
-        this.router.get('/:id', productsController_1.default.getOne);
+        this.router.get('/:idproducto', productsController_1.default.getOne);
+        this.router.get('/:idcategoria', productsController_1.default.getCat);
         this.router.post('/', productsController_1.default.create);
-        this.router.put('/:id', productsController_1.default.update);
-        this.router.delete('/:id', productsController_1.default.delete);
+        this.router.put('/:idproducto', productsController_1.default.update);
+        this.router.delete('/:idproducto', productsController_1.default.delete);
     }
 }
 const productsRoutes = new ProductsRoutes();

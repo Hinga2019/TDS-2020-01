@@ -22,12 +22,22 @@ class ProductsController {
     }
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { id } = req.params;
-            const products = yield database_1.default.query('SELECT * FROM producto WHERE id = ?', [id]);
+            const { idproducto } = req.params;
+            const products = yield database_1.default.query('SELECT * FROM producto WHERE idproducto = ?', [idproducto]);
             if (products.length > 0) {
                 return res.json(products[0]);
             }
             res.status(404).json({ text: 'El Producto no Existe' });
+        });
+    }
+    getCat(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { idcategoria } = req.params;
+            const products = yield database_1.default.query('SELECT * FROM producto WHERE idcategoria = ?', [idcategoria]);
+            if (products.length > 0) {
+                return res.json(products[0]);
+            }
+            res.status(404).json({ text: 'No existe esta Categoria' });
         });
     }
     create(req, res) {
@@ -38,15 +48,15 @@ class ProductsController {
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { id } = req.params;
-            const products = yield database_1.default.query('UPDATE producto set ? WHERE id = ?', [req.body, id]);
+            const { idproducto } = req.params;
+            const products = yield database_1.default.query('UPDATE producto set ? WHERE idproducto = ?', [req.body, idproducto]);
             res.json({ message: 'Producto Actualizado' });
         });
     }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { id } = req.params;
-            const products = yield database_1.default.query('DELETE FROM producto WHERE id = ?', [id]);
+            const { idproducto } = req.params;
+            const products = yield database_1.default.query('DELETE FROM producto WHERE idproducto = ?', [idproducto]);
             res.json({ message: 'Producto Eliminado' });
         });
     }

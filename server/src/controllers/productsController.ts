@@ -9,28 +9,37 @@ class ProductsController{
     }
 
     public async getOne (req: Request,res:Response): Promise<any> {
-        const{id} = req.params;
-        const products = await pool.query('SELECT * FROM producto WHERE id = ?',[id]);
+        const{idproducto} = req.params;
+        const products = await pool.query('SELECT * FROM producto WHERE idproducto = ?',[idproducto]);
         if(products.length > 0){
             return res.json(products[0]);
         }
         res.status(404).json({text:'El Producto no Existe'});
     }
-    
+
+    public async getCat (req: Request,res:Response): Promise<any> {
+        const{idcategoria} = req.params;
+        const products = await pool.query('SELECT * FROM producto WHERE idcategoria = ?',[idcategoria]);
+        if(products.length > 0){
+            return res.json(products[0]);
+        }
+        res.status(404).json({text:'No existe esta Categoria'});
+    }
+
     public async create(req: Request,res:Response): Promise<void>{
         await pool.query('INSERT INTO producto set ?', [req.body]);
         res.json({message:'Producto Registrado'});
     }
 
     public async update(req: Request,res:Response): Promise<void>{
-        const{id} = req.params;
-        const products = await pool.query('UPDATE producto set ? WHERE id = ?',[req.body, id]);
+        const{idproducto} = req.params;
+        const products = await pool.query('UPDATE producto set ? WHERE idproducto = ?',[req.body, idproducto]);
         res.json({message:'Producto Actualizado'});
     }
 
     public async delete(req: Request,res:Response): Promise<void>{
-        const{id} = req.params;
-        const products = await pool.query('DELETE FROM producto WHERE id = ?',[id]);
+        const{idproducto} = req.params;
+        const products = await pool.query('DELETE FROM producto WHERE idproducto = ?',[idproducto]);
         res.json({message:'Producto Eliminado'});
     }
 }

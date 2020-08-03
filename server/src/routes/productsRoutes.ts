@@ -10,10 +10,11 @@ class ProductsRoutes {
 
     config():void{
         this.router.get('/',productsController.list);
-        this.router.get('/:id',productsController.getOne);
+        this.router.get('/:idproducto',productsController.getOne);
+        this.router.get('/:idcategoria',productsController.getCat);
         this.router.post('/',productsController.create);
-        this.router.put('/:id',productsController.update);
-        this.router.delete('/:id',productsController.delete);
+        this.router.put('/:idproducto',productsController.update);
+        this.router.delete('/:idproducto',productsController.delete);
     }
 }
 
