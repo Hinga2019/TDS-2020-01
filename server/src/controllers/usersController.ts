@@ -32,7 +32,12 @@ class UsersController{
         const users = await pool.query('DELETE FROM usuario WHERE id = ?',[id]);
         res.json({message:'Usuario Eliminado'});
     }
-
+    public async login(req: Request,res:Response): Promise<void>{
+        const mail=req.body.mail;
+        const pass=req.body.password;
+        const result=await pool.query(`SELECT * FROM usuario WHERE correo = '${mail}' AND pass ='${pass}'`);
+        res.json(result);
+    }
     
 }
 

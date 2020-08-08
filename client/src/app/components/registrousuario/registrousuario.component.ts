@@ -1,6 +1,7 @@
 import { Component, OnInit, } from '@angular/core';
 import { Users } from '../../models/users';
 import {UsuarioService} from '../../services/usuario.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-registrousuario',
@@ -25,7 +26,7 @@ export class RegistrousuarioComponent implements OnInit {
     pass:''
   };
 
-  constructor(private usersService:UsuarioService) { }
+  constructor(private usersService:UsuarioService,private router:Router) {}
 
   ngOnInit(): void {
   }
@@ -37,6 +38,7 @@ export class RegistrousuarioComponent implements OnInit {
     .subscribe(
       res =>{
         console.log(res);
+        this.router.navigate(['/listar'])
       },
       err => console.error(err)
     )

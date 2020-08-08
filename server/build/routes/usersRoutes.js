@@ -16,6 +16,7 @@ class UsersRoutes {
         this.router.post('/', usersController_1.default.create);
         this.router.put('/:id', usersController_1.default.update);
         this.router.delete('/:id', usersController_1.default.delete);
+        this.router.post('/login', usersController_1.default.login);
     }
 }
 const usersRoutes = new UsersRoutes();

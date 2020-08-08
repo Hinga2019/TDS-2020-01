@@ -13,6 +13,7 @@ class UsersRoutes {
         this.router.post('/',usersController.create);
         this.router.put('/:id',usersController.update);
         this.router.delete('/:id',usersController.delete);
+        this.router.post('/login',usersController.login);
     }
 }
 

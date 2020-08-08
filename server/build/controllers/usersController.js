@@ -50,6 +50,14 @@ class UsersController {
             res.json({ message: 'Usuario Eliminado' });
         });
     }
+    login(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const mail = req.body.mail;
+            const pass = req.body.password;
+            const result = yield database_1.default.query(`SELECT * FROM usuario WHERE correo = '${mail}' AND pass ='${pass}'`);
+            res.json(result);
+        });
+    }
 }
 const usersController = new UsersController();
 exports.default = usersController;
