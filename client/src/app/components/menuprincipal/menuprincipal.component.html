@@ -5,14 +5,19 @@
         </button>
         <span><a routerLink="/"><img src="assets/images/logoproyecto.png" style=" width: 30%;"></a></span>
         <span class="example-spacer"></span>
-        <section>
+        <section *ngIf="mostrarboton">
             <div>
                 <a mat-button routerLink="/listar/login" routerLinkActive="active"><mat-icon>person</mat-icon>Iniciar Sesión</a>
             </div>
         </section>
-        <section>
+        <section *ngIf="mostrarboton">
             <div >
                 <a mat-button routerLink="/listar/registro" routerLinkActive="active">Registrarse</a>
+            </div>
+        </section>
+        <section *ngIf="!mostrarboton">
+            <div >
+                <a mat-button (click)="desloguear()" >Desloguear</a>
             </div>
         </section>
     </mat-toolbar>
