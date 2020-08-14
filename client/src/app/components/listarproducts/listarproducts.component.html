@@ -11,7 +11,7 @@
                 S/. {{product.precio}}
         </mat-card-content>
         <mat-card-content>
-            <button class="button" mat-raised-button color="primary">Agregar</button>
+            <button [routerLink]="['/detalleProducto', product.idproducto]" class="button" mat-raised-button color="primary" >Vista Previa</button>
         </mat-card-content>
     </mat-card>
 </div>

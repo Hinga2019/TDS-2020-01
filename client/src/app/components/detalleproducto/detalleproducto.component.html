@@ -1,0 +1,16 @@
+<div fxFlex="40" fxLayout="row">
+    <mat-card fxFlex="40" fxLayout="column">
+        <mat-card-content>
+            <img src="{{products.imagen}}" mat-card-image>
+        </mat-card-content>
+    </mat-card>
+    <mat-card fxFlex="40" fxLayout="column">
+        <mat-card-content style="text-align: left;">Nombre: {{products.nombre}} </mat-card-content>
+        <mat-card-content style="text-align: left;">Descripción: {{products.descripcion}} </mat-card-content>
+        <mat-card-content style="text-align: left;">Precio: {{products.precio}} </mat-card-content>
+        <mat-card-content style="text-align: left;">Cantidad:</mat-card-content>
+        <mat-card-content >
+            <button mat-raised-button color="primary">Agregar Carrito</button>
+        </mat-card-content>
+    </mat-card>
+</div>

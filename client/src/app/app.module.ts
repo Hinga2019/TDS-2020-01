@@ -19,9 +19,11 @@ import { RegistrousuarioComponent } from './components/registrousuario/registrou
 import { PerfilusuarioComponent } from './components/perfilusuario/perfilusuario.component';
 import { LoginComponent } from './components/login/login.component';
 import { ListarproductsComponent } from './components/listarproducts/listarproducts.component';
+import {MatTableModule} from '@angular/material/table';
 //SERVICE
 import {ProductosService} from './services/productos.service';
 import {UsuarioService} from './services/usuario.service';
+import { DetalleproductoComponent } from './components/detalleproducto/detalleproducto.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,8 @@ import {UsuarioService} from './services/usuario.service';
     RegistrousuarioComponent,
     PerfilusuarioComponent,
     LoginComponent,
-    ListarproductsComponent
+    ListarproductsComponent,
+    DetalleproductoComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import {UsuarioService} from './services/usuario.service';
     MatInputModule,
     MatFormFieldModule,
     MatGridListModule,
-    FormsModule
+    FormsModule,
+    MatTableModule
   ],
   providers: [
     ProductosService,

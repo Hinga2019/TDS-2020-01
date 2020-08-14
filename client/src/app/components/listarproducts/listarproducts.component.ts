@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../../services/productos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listarproducts',
@@ -10,7 +11,7 @@ export class ListarproductsComponent implements OnInit {
   hide = true;
   products: any = []; 
 
-  constructor(private productsService:ProductosService) { }
+  constructor(private productsService:ProductosService,private router: Router) { }
 
   ngOnInit(): void {
     this.productsService.getProducts().subscribe(
@@ -20,5 +21,5 @@ export class ListarproductsComponent implements OnInit {
       err => console.error(err)
     )
   }
-
+  
 }
