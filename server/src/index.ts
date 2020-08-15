@@ -6,7 +6,8 @@ import cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
 import usersRoutes from './routes/usersRoutes';
 import productsRoutes from './routes/productsRoutes';
-
+import pedidoRoutes from './routes/pedidoRoutes';
+import detallePedidoRoutes from './routes/detallePedidoRoutes';
 class Server{
 
     public app : Application;
@@ -29,6 +30,8 @@ class Server{
         this.app.use('/',indexRoutes);
         this.app.use('/api/users',usersRoutes);
         this.app.use('/api/products',productsRoutes);
+        this.app.use('/api/pedido',pedidoRoutes);
+        this.app.use('/api/detallepedido',detallePedidoRoutes);
     }
 
     start():void{
