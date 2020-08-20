@@ -20,10 +20,7 @@ class ProductsController{
     public async getCat (req: Request,res:Response): Promise<any> {
         const{idcategoria} = req.params;
         const products = await pool.query('SELECT * FROM producto WHERE idcategoria = ?',[idcategoria]);
-        if(products.length > 0){
-            return res.json(products[0]);
-        }
-        res.status(404).json({text:'No existe esta Categoria'});
+        res.json(products);
     }
 
     public async create(req: Request,res:Response): Promise<void>{

@@ -8,6 +8,7 @@ import usersRoutes from './routes/usersRoutes';
 import productsRoutes from './routes/productsRoutes';
 import pedidoRoutes from './routes/pedidoRoutes';
 import detallePedidoRoutes from './routes/detallePedidoRoutes';
+import categoriasRoutes from './routes/categoriasRoutes';
 class Server{
 
     public app : Application;
@@ -32,6 +33,7 @@ class Server{
         this.app.use('/api/products',productsRoutes);
         this.app.use('/api/pedido',pedidoRoutes);
         this.app.use('/api/detallepedido',detallePedidoRoutes);
+        this.app.use('/api/categorias',categoriasRoutes);
     }
 
     start():void{

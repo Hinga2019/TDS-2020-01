@@ -13,6 +13,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+
 //COMPONENT
 import { MenuprincipalComponent } from './components/menuprincipal/menuprincipal.component';
 import { RegistrousuarioComponent } from './components/registrousuario/registrousuario.component';
@@ -20,6 +23,7 @@ import { PerfilusuarioComponent } from './components/perfilusuario/perfilusuario
 import { LoginComponent } from './components/login/login.component';
 import { ListarproductsComponent } from './components/listarproducts/listarproducts.component';
 import {MatTableModule} from '@angular/material/table';
+import { CategoriaproductComponent } from './components/categoriaproduct/categoriaproduct.component';
 //SERVICE
 import {ProductosService} from './services/productos.service';
 import {UsuarioService} from './services/usuario.service';
@@ -32,7 +36,9 @@ import { DetalleproductoComponent } from './components/detalleproducto/detallepr
     PerfilusuarioComponent,
     LoginComponent,
     ListarproductsComponent,
-    DetalleproductoComponent
+    DetalleproductoComponent,
+    ListarproductsComponent,
+    CategoriaproductComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,9 @@ import { DetalleproductoComponent } from './components/detalleproducto/detallepr
     MatFormFieldModule,
     MatGridListModule,
     FormsModule,
-    MatTableModule
+    MatTableModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [
     ProductosService,

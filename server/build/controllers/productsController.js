@@ -34,10 +34,7 @@ class ProductsController {
         return __awaiter(this, void 0, void 0, function* () {
             const { idcategoria } = req.params;
             const products = yield database_1.default.query('SELECT * FROM producto WHERE idcategoria = ?', [idcategoria]);
-            if (products.length > 0) {
-                return res.json(products[0]);
-            }
-            res.status(404).json({ text: 'No existe esta Categoria' });
+            res.json(products);
         });
     }
     create(req, res) {

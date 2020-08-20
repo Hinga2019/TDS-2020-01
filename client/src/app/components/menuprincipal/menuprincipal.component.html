@@ -1,9 +1,22 @@
-<p>
-    <mat-toolbar>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-            <mat-icon>menu</mat-icon>
+<mat-sidenav-container>
+    <mat-sidenav #drawer fixedInViewport="true"
+        mode="push"
+        opened="false">
+      <mat-toolbar color="white">Categorías</mat-toolbar>
+      <mat-nav-list *ngFor="let c of categoria">
+        <a mat-list-item  [routerLink]="['/categoriaproduct', c.idcategoria]" routerLinkActive="router-link-active">{{c.descripcion}}</a>
+      </mat-nav-list>
+    </mat-sidenav>
+        <mat-sidenav-content>
+      <mat-toolbar color="white" style="height: 70px;">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
-        <span><a routerLink="/"><img src="assets/images/logoproyecto.png" style=" width: 30%;"></a></span>
+        <span><a routerLink="/"><img src="assets/images/logoproyecto.png" style=" width: 40%;"></a></span>
         <span class="example-spacer"></span>
         <section *ngIf="mostrarboton">
             <div>
@@ -21,4 +34,5 @@
             </div>
         </section>
     </mat-toolbar>
-</p>
+</mat-sidenav-content>
+</mat-sidenav-container>

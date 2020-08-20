@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { ActivatedRoute,Router } from '@angular/router';
+import { CategoriasService } from 'src/app/services/categorias.service';
 
 @Component({
   selector: 'app-menuprincipal',
@@ -10,11 +11,16 @@ import { ActivatedRoute,Router } from '@angular/router';
 export class MenuprincipalComponent implements OnInit ,AfterViewChecked{
   mostrarboton =true;
   user: any = [];
-
-  constructor(private usuarioService:UsuarioService,private activedRoute: ActivatedRoute) {console.log('test') }
+  categoria: any = []; 
+  constructor(private usuarioService:UsuarioService,private activedRoute: ActivatedRoute,private categoriaService:CategoriasService) {console.log('test') }
 
   ngOnInit(): void {
-
+    this.categoriaService.getCategorias().subscribe(
+      res => {
+        this.categoria = res;
+      },
+      err => console.error(err)
+    )
   }
 
   ngAfterViewChecked(){
